@@ -1,0 +1,105 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    FALSE
+    TRUE
+    UMINUS
+
+Grammar
+
+Rule 0     S' -> program
+Rule 1     marker -> <empty>
+Rule 2     N -> <empty>
+Rule 3     expression -> INTEGER
+Rule 4     expression -> ID
+Rule 5     expression -> expression PLUS expression
+Rule 6     expression -> expression MINUS expression
+Rule 7     expression -> expression TIMES expression
+Rule 8     expression -> expression DIVIDE expression
+Rule 9     expression -> expression MOD expression
+Rule 10    expression -> MINUS expression
+Rule 11    expression -> expression LESS expression
+Rule 12    expression -> expression EQUAL expression
+Rule 13    expression -> expression MORE expression
+Rule 14    expression -> expression NOTEQ expression
+Rule 15    expression -> expression LESSEQ expression
+Rule 16    expression -> expression MOREEQ expression
+Rule 17    expression -> expression OR marker expression
+Rule 18    expression -> expression AND marker expression
+Rule 19    expression -> NOT expression
+Rule 20    expression -> LPAREN expression RPAREN
+Rule 21    statement -> ID ASSIGN expression
+Rule 22    statement -> IF expression THEN marker statement
+Rule 23    statement -> IF expression THEN marker statement N ELSE marker statement
+Rule 24    statement -> WHILE marker expression DO marker statement
+Rule 25    statement -> compoundStatement
+Rule 26    statement -> PRINT LPAREN expression RPAREN
+Rule 27    statementList -> statementList SEM marker statement
+Rule 28    statementList -> statement
+Rule 29    compoundStatement -> BEGIN statementList END
+Rule 30    type -> INT
+Rule 31    type -> REAL
+Rule 32    idList -> ID
+Rule 33    idList -> idList COMMA ID
+Rule 34    declarationList -> idList COLON type
+Rule 35    declarationList -> declarationList SEM idList COLON type
+Rule 36    declarations -> VAR declarationList
+Rule 37    declarations -> <empty>
+Rule 38    program -> PROGRAM ID declarations compoundStatement
+
+Terminals, with rules where they appear
+
+AND                  : 18
+ASSIGN               : 21
+BEGIN                : 29
+COLON                : 34 35
+COMMA                : 33
+DIVIDE               : 8
+DO                   : 24
+ELSE                 : 23
+END                  : 29
+EQUAL                : 12
+FALSE                : 
+ID                   : 4 21 32 33 38
+IF                   : 22 23
+INT                  : 30
+INTEGER              : 3
+LESS                 : 11
+LESSEQ               : 15
+LPAREN               : 20 26
+MINUS                : 6 10
+MOD                  : 9
+MORE                 : 13
+MOREEQ               : 16
+NOT                  : 19
+NOTEQ                : 14
+OR                   : 17
+PLUS                 : 5
+PRINT                : 26
+PROGRAM              : 38
+RPAREN               : 20 26
+SEM                  : 27 35
+THEN                 : 22 23
+TIMES                : 7
+TRUE                 : 
+UMINUS               : 
+VAR                  : 36
+WHILE                : 24
+error                : 
+
+Nonterminals, with rules where they appear
+
+N                    : 23
+REAL                 : 31
+compoundStatement    : 25 38
+declarationList      : 35 36
+declarations         : 38
+expression           : 5 5 6 6 7 7 8 8 9 9 10 11 11 12 12 13 13 14 14 15 15 16 16 17 17 18 18 19 20 21 22 23 24 26
+idList               : 33 34 35
+marker               : 17 18 22 23 23 24 24 27
+program              : 0
+statement            : 22 23 23 24 27 28
+statementList        : 27 29
+type                 : 34 35
+
